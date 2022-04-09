@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The only MonoBehaviour file.
+/// </summary>
 public class MonoMono : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+	DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+    }
+
     void Update()
     {
-        
     }
 }

@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class MonoMono : MonoBehaviour
 {
+    private UI.MainMenu mainMenu;
+
     private void Awake()
     {
 	DontDestroyOnLoad(gameObject);
@@ -14,6 +16,15 @@ public class MonoMono : MonoBehaviour
 
     void Start()
     {
+    }
+
+    private void OnEnable()
+    {
+        if (Helper.Scene.GetActiveScene() == SceneId.MainMenu)
+        {
+            mainMenu = new UI.MainMenu();
+            mainMenu.Initialize();
+        }
     }
 
     void Update()

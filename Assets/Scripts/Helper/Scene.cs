@@ -2,8 +2,8 @@ using UnityEngine.SceneManagement;
 
 public enum SceneId
 {
-    MainMenu,
-    InGame
+    MainMenu = 0,
+    Game = 1
 }
 
 namespace Helper
@@ -18,10 +18,15 @@ namespace Helper
                 case 0:
                     return SceneId.MainMenu;
                 case 1:
-                    return SceneId.InGame;
+                    return SceneId.Game;
                 default:
                     throw new System.ArgumentOutOfRangeException();
             }
+        }
+
+        public static void LoadSceneAsync(SceneId scene)
+        {
+            SceneManager.LoadSceneAsync((int)scene);
         }
     }
 }

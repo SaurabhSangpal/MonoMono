@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 public enum SceneId
 {
     MainMenu = 0,
-    Game = 1
+    Game = 1,
+    Total  // Total elements in this enum, not to be used elsewhere.
 }
 
 namespace Helper
@@ -13,15 +14,10 @@ namespace Helper
         public static SceneId GetActiveScene()
         {
             var scene = SceneManager.GetActiveScene();
-            switch (scene.buildIndex)
-            {
-                case 0:
-                    return SceneId.MainMenu;
-                case 1:
-                    return SceneId.Game;
-                default:
-                    throw new System.ArgumentOutOfRangeException();
-            }
+            if (scene.buildIndex >= (int)SceneId.Total)
+                throw new System.ArgumentOutOfRangeException("Element missing in enum");
+
+            return (SceneId)scene.buildIndex;
         }
 
         public static void LoadSceneAsync(SceneId scene)

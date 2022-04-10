@@ -39,18 +39,24 @@ namespace UI
 
         private void OnContinue()
         {
+            Debug.Log("Continue pressed");
         }
 
         private void OnNewGame()
         {
+            Debug.Log("New Game pressed");
+            Helper.Scene.LoadSceneAsync(SceneId.Game);
         }
 
         private void OnSettings()
         {
+            Debug.Log("Settings pressed");
         }
 
         private void OnQuit()
         {
+            Debug.Log("Quit pressed");
+            Application.Quit();
         }
     }
 }

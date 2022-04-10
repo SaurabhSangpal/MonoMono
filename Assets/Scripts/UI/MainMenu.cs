@@ -25,6 +25,32 @@ namespace UI
             newGame = btnParent.transform.Find("New Game").GetComponent<Button>();
             settings = btnParent.transform.Find("Settings").GetComponent<Button>();
             quit = btnParent.transform.Find("Quit").GetComponent<Button>();
+
+            @continue.onClick.RemoveAllListeners();
+            newGame.onClick.RemoveAllListeners();
+            settings.onClick.RemoveAllListeners();
+            quit.onClick.RemoveAllListeners();
+
+            @continue.onClick.AddListener(OnContinue);
+            newGame.onClick.AddListener(OnNewGame);
+            settings.onClick.AddListener(OnSettings);
+            quit.onClick.AddListener(OnQuit);
+        }
+
+        private void OnContinue()
+        {
+        }
+
+        private void OnNewGame()
+        {
+        }
+
+        private void OnSettings()
+        {
+        }
+
+        private void OnQuit()
+        {
         }
     }
 }

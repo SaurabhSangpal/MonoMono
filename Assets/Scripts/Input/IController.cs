@@ -5,6 +5,8 @@ namespace Input
     /// </summary>
     internal interface IController
     {
+        void Initialize(KeyBinds keyBinds);
+
         /// <summary> Returns value between -1 to 1, -1 being left and 1 being right. </summary>
         float GetHorizontalAxis();
         /// <summary> Returns value between -1 to 1, -1 being down and 1 being up. </summary>

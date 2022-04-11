@@ -2,6 +2,14 @@ namespace Input
 {
     internal class Keyboard : IController
     {
+        private KeyBinds kb;
+
+        public void Initialize(KeyBinds keyBinds)
+        {
+            UnityEngine.Debug.Assert(keyBinds != null);
+            kb = keyBinds;
+        }
+
         public float GetHorizontalAxis()
         {
             throw new System.NotImplementedException();

@@ -28,6 +28,21 @@ namespace Input
             if (!Helper.PersistentPathIO.Exists("keybinds.json"))
             {
                 var kb = new KeyBinds();
+                kb.isJoystick = false;
+                kb.up = "up";
+                kb.down = "down";
+                kb.left = "left";
+                kb.right = "right";
+                kb.altUp = "w";
+                kb.altDown = "s";
+                kb.altLeft = "a";
+                kb.altRight = "d";
+                kb.jump = "space";
+                kb.dash = "z";
+                kb.crouch = "c";
+                kb.attack = "f";
+                Helper.PersistentPathIO.SaveFile("keybinds.json", JsonConvert.SerializeObject(kb, Formatting.Indented));
+
                 return kb;
             }
             var keyBinds = JsonConvert.DeserializeObject<KeyBinds>(Helper.PersistentPathIO.LoadFile("keybinds.json"));

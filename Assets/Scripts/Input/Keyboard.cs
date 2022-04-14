@@ -14,15 +14,16 @@ namespace Input
 
         public float GetHorizontalAxis()
         {
-            if (UInput.GetKey(kb.left) && UInput.GetKey(kb.right))
+            if (UInput.GetKey(kb.left) && UInput.GetKey(kb.right) ||
+                UInput.GetKey(kb.altLeft) && UInput.GetKey(kb.altRight))
             {
                 return 0;
             }
-            else if (UInput.GetKey(kb.left))
+                else if (UInput.GetKey(kb.left) || UInput.GetKey(kb.altLeft))
             {
                 return -1;
             }
-            else if (UInput.GetKey(kb.right))
+                else if (UInput.GetKey(kb.right) || UInput.GetKey(kb.altRight))
             {
                 return 1;
             }
@@ -31,15 +32,16 @@ namespace Input
 
         public float GetVerticalAxis()
         {
-            if (UInput.GetKey(kb.down) && UInput.GetKey(kb.up))
+            if (UInput.GetKey(kb.down) && UInput.GetKey(kb.up) ||
+                UInput.GetKey(kb.altDown) && UInput.GetKey(kb.altUp))
             {
                 return 0;
             }
-            else if (UInput.GetKey(kb.down))
+            else if (UInput.GetKey(kb.down) || UInput.GetKey(kb.altDown))
             {
                 return -1;
             }
-            else if (UInput.GetKey(kb.up))
+            else if (UInput.GetKey(kb.up) || UInput.GetKey(kb.altUp))
             {
                 return 1;
             }

@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace Input
 {
     [System.Serializable]
@@ -20,5 +22,18 @@ namespace Input
         public string dash;
         public string crouch;
         public string attack;
+
+        internal static KeyBinds LoadFromDisk()
+        {
+            if (!Helper.PersistentPathIO.Exists("keybinds.json"))
+            {
+                var kb = new KeyBinds();
+                return kb;
+            }
+            var keyBinds = JsonConvert.DeserializeObject<KeyBinds>(Helper.PersistentPathIO.LoadFile("keybinds.json"));
+            if (keyBinds != null)
+                return keyBinds;
+            throw new System.Exception("Failed to load or parse key binds");
+        }
     }
 }

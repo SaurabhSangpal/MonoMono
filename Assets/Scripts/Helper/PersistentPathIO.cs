@@ -22,7 +22,10 @@ namespace Helper
         {
             var p = Application.persistentDataPath + "/" + path;
             if (!File.Exists(p))
-                File.Create(p);
+            {
+                var fs = new FileStream(p, FileMode.Create);
+                fs.Dispose();
+            }
 
             File.WriteAllText(p, data);
         }

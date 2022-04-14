@@ -11,6 +11,10 @@ namespace Input
         public string right;
         public string up;
         public string down;
+        public string altLeft;
+        public string altRight;
+        public string altUp;
+        public string altDown;
 
         public string jump;
         public string dash;

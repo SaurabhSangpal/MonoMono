@@ -10,6 +10,7 @@ public class MonoMono : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        var kb = Input.KeyBinds.LoadFromDisk();
     }
 
     void Start()

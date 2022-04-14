@@ -19,11 +19,11 @@ namespace Input
             {
                 return 0;
             }
-                else if (UInput.GetKey(kb.left) || UInput.GetKey(kb.altLeft))
+            else if (UInput.GetKey(kb.left) || UInput.GetKey(kb.altLeft))
             {
                 return -1;
             }
-                else if (UInput.GetKey(kb.right) || UInput.GetKey(kb.altRight))
+            else if (UInput.GetKey(kb.right) || UInput.GetKey(kb.altRight))
             {
                 return 1;
             }

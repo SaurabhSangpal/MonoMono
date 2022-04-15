@@ -7,10 +7,12 @@ public class MonoMono : MonoBehaviour
 {
     private UI.MainMenu mainMenu;
 
+    private Input.KeyBinds keyBinds;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        var kb = Input.KeyBinds.LoadFromDisk();
+        keyBinds = Input.KeyBinds.LoadFromDisk();
     }
 
     void Start()

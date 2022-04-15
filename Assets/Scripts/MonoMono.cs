@@ -8,11 +8,15 @@ public class MonoMono : MonoBehaviour
     private UI.MainMenu mainMenu;
 
     private Input.KeyBinds keyBinds;
+    private Input.IController controller;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
         keyBinds = Input.KeyBinds.LoadFromDisk();
+        controller = new Input.Keyboard();
+        controller.Initialize(keyBinds);
     }
 
     void Start()

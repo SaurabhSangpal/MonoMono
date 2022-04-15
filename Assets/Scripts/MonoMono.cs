@@ -19,7 +19,7 @@ public class MonoMono : MonoBehaviour
         controller.Initialize(keyBinds);
     }
 
-    void Start()
+    private void Start()
     {
     }
 
@@ -32,7 +32,7 @@ public class MonoMono : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
     }
 }

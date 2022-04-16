@@ -12,7 +12,7 @@ namespace Helper
 
         internal static string LoadFile(string path)
         {
-            if (!File.Exists(Application.persistentDataPath + "/" + path))
+            if (!Exists(path))
                 throw new System.Exception("File does not exist!");
 
             return File.ReadAllText(Application.persistentDataPath + "/" + path);

@@ -10,5 +10,13 @@ namespace Character
         {
             transform = go.transform;
         }
+
+        public void Jump() { }
+
+        public void Dash() { }
+
+        public void Crouch() { }
+
+        public void Attack() { }
     }
 }

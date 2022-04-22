@@ -10,6 +10,8 @@ public class MonoMono : MonoBehaviour
     private Input.KeyBinds keyBinds;
     private Input.IController controller;
 
+    private Character.Player player;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -25,10 +27,15 @@ public class MonoMono : MonoBehaviour
 
     private void OnEnable()
     {
-        if (Helper.Scene.GetActiveScene() == SceneId.MainMenu)
+        var activeScene = Helper.Scene.GetActiveScene();
+        if (activeScene == SceneId.MainMenu)
         {
             mainMenu = new UI.MainMenu();
             mainMenu.Initialize();
+        }
+        else if (activeScene == SceneId.Game)
+        {
+            player = new Character.Player(GameObject.Find("Player"));
         }
     }
 

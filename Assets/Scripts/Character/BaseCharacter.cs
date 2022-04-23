@@ -4,9 +4,9 @@ namespace Character
 {
     public abstract class BaseCharacter : ICharacter
     {
-        public GameObject GameObject { get; private set; }
-        public float MoveSpeed { get; private set; }
-        public float DashDistance { get; private set; }
+        public GameObject GameObject { get; protected set; }
+        public float MoveSpeed { get; protected set; }
+        public float DashDistance { get; protected set; }
 
         // TODO: Can probably improve.
         public void Move(Vector2 direction)

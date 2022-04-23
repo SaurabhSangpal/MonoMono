@@ -2,21 +2,16 @@ using UnityEngine;
 
 namespace Character
 {
-    public class Player
+    public class Player : BaseCharacter
     {
-        private Transform transform;
-
         public Player(GameObject go)
         {
-            transform = go.transform;
+            this.GameObject = go;
         }
 
-        public void Jump() { }
-
-        public void Dash() { }
-
-        public void Crouch() { }
-
-        public void Attack() { }
+        public override void Jump() { }
+        public override void Dash() { }
+        public override void Crouch() { }
+        public override void Attack() { }
     }
 }

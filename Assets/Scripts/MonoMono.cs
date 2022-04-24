@@ -27,15 +27,10 @@ public class MonoMono : MonoBehaviour
 
     private void OnEnable()
     {
-        var activeScene = Helper.Scene.GetActiveScene();
-        if (activeScene == SceneId.MainMenu)
+        if (Helper.Scene.GetActiveScene() == SceneId.MainMenu)
         {
             mainMenu = new UI.MainMenu();
             mainMenu.Initialize();
-        }
-        else if (activeScene == SceneId.Game)
-        {
-            player = new Character.Player(GameObject.Find("Player"));
         }
     }
 

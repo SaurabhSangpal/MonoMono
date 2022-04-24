@@ -13,6 +13,11 @@ namespace Character
         GameObject GameObject { get; }
 
         /// <summary>
+        /// The health of this character.
+        /// </summary>
+        int Health { get; }
+
+        /// <summary>
         /// The speed at which the character can move.
         /// </summary>
         float MoveSpeed { get; }
@@ -21,6 +26,11 @@ namespace Character
         /// The distance covered by the dash.
         /// </summary>
         float DashDistance { get; }
+
+        /// <summary>
+        /// The amount of damage this character can deal in one hit.
+        /// </summary>
+        int AttackDamage { get; }
 
         /// <summary>
         /// Move in the given direction.
@@ -46,5 +56,15 @@ namespace Character
         /// Perform an attack.
         /// </summary>
         void Attack();
+
+        /// <summary>
+        /// Receive damage equal to <see cref="damage"/>.
+        /// </summary>
+        void TakeDamage(int damage);
+
+        /// <summary>
+        /// Kill the character.
+        /// </summary>
+        void Die();
     }
 }

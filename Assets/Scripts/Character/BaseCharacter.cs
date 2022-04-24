@@ -8,6 +8,11 @@ namespace Character
         public float MoveSpeed { get; protected set; }
         public float DashDistance { get; protected set; }
 
+        public BaseCharacter(GameObject go)
+        {
+            GameObject = go;
+        }
+
         // TODO: Can probably improve.
         public void Move(Vector2 direction)
         {

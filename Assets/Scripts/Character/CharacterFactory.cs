@@ -14,12 +14,12 @@ namespace Character
     /// <summary>
     /// The character factory. Use to create/obtain player or enemy character references.
     /// </summary>
-    public class CharacterFactory
+    public static class CharacterFactory
     {
         /// <summary>
         /// Creates a new instance of the CharacterType and returns the interface to it.
         /// </summary>
-        public ICharacter Create(CharacterType characterType)
+        public static ICharacter Create(CharacterType characterType)
         {
             switch (characterType)
             {

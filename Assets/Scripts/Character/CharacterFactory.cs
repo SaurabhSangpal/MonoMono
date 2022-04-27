@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Character
 {
     /// <summary>
@@ -24,6 +26,9 @@ namespace Character
             switch (characterType)
             {
                 case CharacterType.Player:
+                    var go = GameObject.Find("Player");
+                    if (go != null)
+                        return new Player(go);
                     break;
                 case CharacterType.Enemy:
                     break;

@@ -41,5 +41,23 @@ public class MonoMono : MonoBehaviour
 
     private void Update()
     {
+        if (player == null)
+            return;
+
+        // TODO - We may need an input queue here.
+        var hor = controller.GetHorizontalAxis();
+        var ver = controller.GetVerticalAxis();
+        player.Move(new Vector2(hor, ver));
+
+        // Only allowing one action for now - crouch, dash, or jump in one frame.
+        if (controller.IsCrouchPressed())
+            player.Crouch();
+        else if (controller.IsDashPressed())
+            player.Dash();
+        else if (controller.IsJumpPressed())
+            player.Jump();
+
+        if (controller.IsAttackPressed())
+            player.Attack();
     }
 }
